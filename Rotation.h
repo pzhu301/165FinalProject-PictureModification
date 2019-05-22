@@ -44,8 +44,9 @@ public:
 			cout << "Cant't find the file";
 			exit(0);
 		}
+		cout << angle;
 		Mat dst;
-		Point2f pt(src.cols / 2.0, src.rows / 2.0);
+		Point2f pt(src.cols / 2.0, src.rows / 2.0); // rotation center
 		Mat r = getRotationMatrix2D(pt, angle, 1.0);
 		warpAffine(src, dst, r, Size(src.cols, src.rows));
 		return dst;

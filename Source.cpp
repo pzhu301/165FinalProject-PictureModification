@@ -26,8 +26,9 @@ int main(int argc, char** argv)
 	int be, choice;
 	bool check = false;
 
+
 	cout << "Welcome to use this program. This program will do 3 modification:\n";
-	cout << "Brightness changing, rotation and resizing.";
+	cout << "Brightness changing, rotation and resizing.\n\n";
 	do {
 		//get the image file
 		cout << "Please enter the name of file (include file extension):";
@@ -35,6 +36,7 @@ int main(int argc, char** argv)
 		//input validation
 		try
 		{
+			check1 = "";
 			int len = input.length();
 			for (int i = 4; i > 0; i--)
 			{
@@ -74,8 +76,8 @@ int main(int argc, char** argv)
 
 		cout << "Please choose one modification:\n 1.brightness\n 2.rotation\n 3.resize\n ";
 		cin >> choice;
-		Mat rot = r.rotate(src);
-		Mat resize = re.resizing(src);
+		Mat rot;
+		Mat resize;
 		switch (choice)
 		{
 		case 1:
@@ -118,7 +120,7 @@ int main(int argc, char** argv)
 			cout << "Please enter the angle for rotation:";
 			cin >> angle;
 			r.setAngle(angle);
-
+			rot = r.rotate(src);
 			imshow("Rotation", rot);
 			waitKey();
 			break;
@@ -154,6 +156,7 @@ int main(int argc, char** argv)
 				return 1;
 			}
 			re.setColPer(col);
+			resize = re.resizing(src);
 			imshow("Resizing", resize);
 			waitKey(0);
 			break;
