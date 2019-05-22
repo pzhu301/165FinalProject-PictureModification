@@ -1,0 +1,11 @@
+main: Brightness.o Rotation.o Resize.o
+	gcc -o main Brightness,o Rotation.o Resize.o
+
+Brightness.o: Brightness.cpp Brightness.h
+
+Rotation.o: Rotation.cpp Rotation.h
+
+Resize.o: Resize.cpp Resize.h
+
+clean:
+	rm main Brightness.o Rotation.o Resize.o *.0
