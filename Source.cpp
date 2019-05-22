@@ -26,6 +26,8 @@ int main(int argc, char** argv)
 	int be, choice;
 	bool check = false;
 
+	cout << "Welcome to use this program. This program will do 3 modification:\n";
+	cout << "Brightness changing, rotation and resizing.";
 	do {
 		//get the image file
 		cout << "Please enter the name of file (include file extension):";
