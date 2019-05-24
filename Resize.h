@@ -54,7 +54,7 @@ public:
 	Mat resizing(Mat src)
 	{
 		Mat resImage;
-		resize(src, resImage, Size(src.cols * 0.75, src.rows * 0.75));
+		resize(src, resImage, Size(src.cols * colPer, src.rows * rowPer));
 		return resImage;
 	}
 };
